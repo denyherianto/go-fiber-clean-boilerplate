@@ -4,7 +4,7 @@ import (
 	"log"
 	"sync"
 
-	"github.com/inditekno/office-backend/pkg"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/pkg"
 	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

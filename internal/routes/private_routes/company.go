@@ -1,11 +1,11 @@
 package privateRoutes
 
 import (
+	"github.com/denyherianto/go-fiber-clean-boilerplate/database"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/handlers"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/repositories"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/usecases/company"
 	"github.com/gofiber/fiber/v2"
-	"github.com/inditekno/office-backend/database"
-	"github.com/inditekno/office-backend/internal/handlers"
-	"github.com/inditekno/office-backend/internal/repositories"
-	"github.com/inditekno/office-backend/internal/usecases/company"
 )
 
 // CompanyRoutes func for describe group of private Companies routes.

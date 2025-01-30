@@ -1,4 +1,4 @@
-module github.com/inditekno/office-backend
+module github.com/denyherianto/go-fiber-clean-boilerplate
 
 go 1.23.4
 

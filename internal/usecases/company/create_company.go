@@ -1,7 +1,7 @@
 package company
 
 import (
-	"github.com/inditekno/office-backend/internal/dto"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/dto"
 )
 
 func (uc *useCase) CreateCompany(companyRequest *dto.CompanyRequest) (*dto.CompanyResponse, error) {

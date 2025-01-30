@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/inditekno/office-backend/database"
-	"github.com/inditekno/office-backend/internal/entities"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/database"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/entities"
 )
 
 func main() {

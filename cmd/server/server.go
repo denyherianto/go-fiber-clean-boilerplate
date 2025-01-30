@@ -3,15 +3,15 @@ package server
 import (
 	"os"
 
-	"github.com/inditekno/office-backend/configs"
-	"github.com/inditekno/office-backend/database"
-	"github.com/inditekno/office-backend/internal/middlewares"
-	"github.com/inditekno/office-backend/internal/routes"
-	"github.com/inditekno/office-backend/pkg"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/configs"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/database"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/middlewares"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/routes"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/pkg"
 
 	"github.com/gofiber/fiber/v2"
 
-	_ "github.com/inditekno/office-backend/docs" // load API Docs files (Swagger)
+	_ "github.com/denyherianto/go-fiber-clean-boilerplate/docs" // load API Docs files (Swagger)
 
 	_ "github.com/joho/godotenv/autoload" // load .env file automatically
 )

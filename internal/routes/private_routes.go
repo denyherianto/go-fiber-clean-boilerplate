@@ -1,10 +1,10 @@
 package routes
 
 import (
+	"github.com/denyherianto/go-fiber-clean-boilerplate/database"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/middlewares"
+	privateRoutes "github.com/denyherianto/go-fiber-clean-boilerplate/internal/routes/private_routes"
 	"github.com/gofiber/fiber/v2"
-	"github.com/inditekno/office-backend/database"
-	"github.com/inditekno/office-backend/internal/middlewares"
-	privateRoutes "github.com/inditekno/office-backend/internal/routes/private_routes"
 )
 
 // PrivateRoutes func for describe group of private routes.

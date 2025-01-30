@@ -2,7 +2,7 @@ package utils
 
 // "fmt"
 
-// "github.com/inditekno/office-backend/app/constants"
+// "github.com/denyherianto/go-fiber-clean-boilerplate/app/constants"
 
 // GetCredentialsByRole func for getting credentials from a role name.
 func GetCredentialsByRole(role []string) ([]string, error) {

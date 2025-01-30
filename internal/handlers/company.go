@@ -1,10 +1,10 @@
 package handlers
 
 import (
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/dto"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/usecases/company"
+	validatorUtils "github.com/denyherianto/go-fiber-clean-boilerplate/pkg/validator"
 	"github.com/gofiber/fiber/v2"
-	"github.com/inditekno/office-backend/internal/dto"
-	"github.com/inditekno/office-backend/internal/usecases/company"
-	validatorUtils "github.com/inditekno/office-backend/pkg/validator"
 )
 
 type CompanyHandler interface {

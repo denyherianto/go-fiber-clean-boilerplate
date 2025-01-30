@@ -1,6 +1,19 @@
-# SILOG E-Office Backend
+# Go Fiber Clean Architecture Boilerplate
 
 [Fiber](https://gofiber.io/) is an Express.js inspired web framework build on top of Fasthttp, the fastest HTTP engine for Go. Designed to ease things up for **fast** development with **zero memory allocation** and **performance** in mind.
+
+## Features
+
+- **Clean Architecture** for building scalable projects
+- **JWT** for authentication
+- **PostgreSQL** for database
+- **Redis** for cache
+- **Swagger** for auto-generating API Docs
+- **Golang Migrate** for database migrations
+- **GolangCI-Lint** for Go linter issues
+- **GoCritic** for Go the best practice issues
+- **Gosec** for Go security issues
+
 
 ## Prerequisite
 1. PostgresSQL
@@ -40,6 +53,8 @@ go run main.go
 4. Go to API Docs page (Swagger): [127.0.0.1:5001/swagger/index.html](http://127.0.0.1:5001/swagger/index.html)
 
 ![Screenshot](https://user-images.githubusercontent.com/11155743/112715187-07dab100-8ef0-11eb-97ea-68d34f2178f6.png)
+
+
 
 ## 🗄 Template structure
 

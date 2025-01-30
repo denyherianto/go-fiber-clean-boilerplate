@@ -1,6 +1,6 @@
 package dto
 
-import "github.com/inditekno/office-backend/internal/entities"
+import "github.com/denyherianto/go-fiber-clean-boilerplate/internal/entities"
 
 type CompanyRequest struct {
 	Name string `json:"name" validate:"required,min=3,max=50"`

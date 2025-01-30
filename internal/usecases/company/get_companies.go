@@ -1,8 +1,8 @@
 package company
 
 import (
-	"github.com/inditekno/office-backend/internal/dto"
-	"github.com/inditekno/office-backend/internal/entities"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/dto"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/entities"
 )
 
 func (uc *useCase) GetCompanies() (dto.CompaniesResponse, error) {

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/inditekno/office-backend/cmd/server"
-	"github.com/inditekno/office-backend/database"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/cmd/server"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/database"
 
-	_ "github.com/inditekno/office-backend/docs" // load API Docs files (Swagger)
+	_ "github.com/denyherianto/go-fiber-clean-boilerplate/docs" // load API Docs files (Swagger)
 
 	_ "github.com/joho/godotenv/autoload" // load .env file automatically
 )

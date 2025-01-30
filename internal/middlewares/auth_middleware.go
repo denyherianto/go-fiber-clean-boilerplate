@@ -7,7 +7,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 
-	"github.com/inditekno/office-backend/pkg/jwt"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/pkg/jwt"
 )
 
 func TokenValidation(c *fiber.Ctx) error {

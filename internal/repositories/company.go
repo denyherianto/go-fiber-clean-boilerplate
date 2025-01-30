@@ -1,9 +1,9 @@
 package repositories
 
 import (
-	"github.com/inditekno/office-backend/database"
-	"github.com/inditekno/office-backend/internal/dto"
-	"github.com/inditekno/office-backend/internal/entities"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/database"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/dto"
+	"github.com/denyherianto/go-fiber-clean-boilerplate/internal/entities"
 )
 
 type CompanyRepository interface {
