@@ -1,0 +1,26 @@
+name: Deploy Go App
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build & Restart PM2 Service
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: root
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd /home/office-backend
+            git pull origin main
+            git status
+            cp .env.production .env
+            make build
+            pm2 restart silog-office

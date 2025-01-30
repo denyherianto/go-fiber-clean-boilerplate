@@ -1,0 +1,287 @@
+basePath: /api
+definitions:
+  entities.Company:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: string
+      name:
+        maxLength: 255
+        type: string
+      updated_at:
+        type: string
+    required:
+    - id
+    - name
+    type: object
+  entities.User:
+    properties:
+      created_at:
+        type: string
+      email:
+        maxLength: 255
+        type: string
+      id:
+        type: string
+      name:
+        maxLength: 255
+        type: string
+      password_hash:
+        maxLength: 255
+        type: string
+      updated_at:
+        type: string
+      user_status:
+        type: integer
+    required:
+    - email
+    - id
+    - password_hash
+    - user_status
+    type: object
+  requests.SignInResponse:
+    properties:
+      access_token:
+        type: string
+      email:
+        type: string
+      name:
+        type: string
+      refresh_token:
+        type: string
+    type: object
+info:
+  contact:
+    email: your@mail.com
+    name: API Support
+  description: This is an auto-generated API Docs.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: API
+  version: "1.0"
+paths:
+  /v1/companies:
+    get:
+      consumes:
+      - application/json
+      description: Get all exists companies.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/entities.Company'
+            type: array
+      summary: get all exists companies
+      tags:
+      - Companies
+    post:
+      consumes:
+      - application/json
+      description: Create a new company.
+      parameters:
+      - description: Name
+        in: body
+        name: name
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entities.Company'
+      security:
+      - ApiKeyAuth: []
+      summary: create a new company
+      tags:
+      - Companies
+  /v1/companies/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete company by given ID.
+      parameters:
+      - description: Company ID
+        in: body
+        name: id
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: ok
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: delete company by given ID
+      tags:
+      - Companies
+    get:
+      consumes:
+      - application/json
+      description: Get company by given ID.
+      parameters:
+      - description: Company ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entities.Company'
+      summary: get company by given ID
+      tags:
+      - Companies
+    put:
+      consumes:
+      - application/json
+      description: Update company.
+      parameters:
+      - description: Company ID
+        in: body
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Name
+        in: body
+        name: name
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: ok
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: update company
+      tags:
+      - Companies
+  /v1/token/renew:
+    post:
+      consumes:
+      - application/json
+      description: Renew access and refresh tokens.
+      parameters:
+      - description: Refresh token
+        in: body
+        name: refresh_token
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/requests.SignInResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: renew access and refresh tokens
+      tags:
+      - Token
+  /v1/user/login:
+    post:
+      consumes:
+      - application/json
+      description: Auth user and return access and refresh token.
+      parameters:
+      - description: User Email
+        in: body
+        name: email
+        required: true
+        schema:
+          type: string
+      - description: User Password
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/requests.SignInResponse'
+      summary: auth user and return access and refresh token
+      tags:
+      - User
+  /v1/user/logout:
+    post:
+      consumes:
+      - application/json
+      description: De-authorize user and delete refresh token from Redis.
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: ok
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: de-authorize user and delete refresh token from Redis
+      tags:
+      - User
+  /v1/user/register:
+    post:
+      consumes:
+      - application/json
+      description: Create a new user.
+      parameters:
+      - description: Name
+        in: body
+        name: email
+        required: true
+        schema:
+          type: string
+      - description: Email
+        in: body
+        name: email
+        required: true
+        schema:
+          type: string
+      - description: Password
+        in: body
+        name: password
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entities.User'
+      summary: create a new user
+      tags:
+      - User
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
